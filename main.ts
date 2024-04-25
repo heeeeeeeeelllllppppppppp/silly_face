@@ -689,8 +689,8 @@ mySprite = Render.getRenderSpriteVariable()
 tiles.setCurrentTilemap(tilemap`level0`)
 Render.setViewMode(ViewMode.tilemapView)
 my_hp = statusbars.create(100, 4, StatusBarKind.Health)
-my_hp.max = 250
-my_hp.value += 250
+my_hp.max = 400
+my_hp.value += 400
 my_hp.positionDirection(CollisionDirection.Top)
 game.onUpdateInterval(1750, function () {
     if (level > 0) {
