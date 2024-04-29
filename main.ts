@@ -687,8 +687,12 @@ level = 0
 mySprite = sprites.create(assets.image`myImage4`, SpriteKind.Player)
 mySprite = Render.getRenderSpriteVariable()
 tiles.setCurrentTilemap(tilemap`level0`)
+// ray casting extension: https://github.com/aqeeaqee/pxt-raycasting
 Render.setViewMode(ViewMode.tilemapView)
 my_hp = statusbars.create(100, 4, StatusBarKind.Health)
+// status bar extension:
+// https://github.com/jwunderl/pxt-status-bar 
+// 
 my_hp.max = 400
 my_hp.value += 400
 my_hp.positionDirection(CollisionDirection.Top)
@@ -702,6 +706,8 @@ game.onUpdateInterval(1750, function () {
             }
             if (value.image.equals(assets.image`myImage0`)) {
                 tear = sprites.createProjectileFromSprite(assets.image`myImage5`, value, 0, 0)
+                // sprite utility extension: 
+                // https://github.com/jwunderl/arcade-sprite-util
                 spriteutils.moveToAtSpeed(tear, spriteutils.pos(mySprite.x, mySprite.y), 75)
                 tear.setKind(SpriteKind.tear)
             }
